@@ -6,10 +6,22 @@ A words per minute counter for macOS. It shows your live typing speed in a small
 
 - Shows real time typing speed while you type in any application.
 - Automatically fades out when you stop typing.
+- Quick Typing Bar at the bottom center of the screen to test excerpt typing speed or challenge a friend.
+- Open the Typing Bar from the menu bar or with the global shortcut Option + Shift + W.
+- Paste excerpts into the Typing Bar with Command + V for real time letter matching and accuracy stats.
 - Menu bar icon to pause the counter, change themes, or change idle timeout.
 - Filters out key repeats when holding keys down.
 - Ignores keyboard shortcuts like Command and Control.
 - Requires two keystrokes to trigger so single keys like fullscreen do not show the counter.
+
+## Quick Typing Bar
+
+Press Option + Shift + W or select Quick Typing Bar from the menu bar.
+
+- Type freely to test your typing speed on whatever you are reading.
+- Press Command + V to paste an excerpt and type with letter matching.
+- Press Enter to finish your sprint and see your final WPM, time, and accuracy.
+- Press Escape to close the bar.
 
 ## Requirements
 

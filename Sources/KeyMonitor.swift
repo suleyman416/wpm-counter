@@ -90,6 +90,22 @@ public final class KeyMonitor {
     }
 
     private func handleKeyEvent(_ event: NSEvent) {
+        // Global hotkey: Option + Shift + W toggles the Quick Typing Bar
+        let flags = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+        if flags.contains(.option) && flags.contains(.shift) && !flags.contains(.command) && !flags.contains(.control) {
+            if event.keyCode == 13 || event.charactersIgnoringModifiers?.lowercased() == "w" {
+                DispatchQueue.main.async {
+                    TypingBarWindow.shared.toggle()
+                }
+                return
+            }
+        }
+
+        // When Typing Bar is active and focused, don't trigger the background overlay counter
+        if TypingBarWindow.shared.isKeyWindow {
+            return
+        }
+
         if shouldIgnore(event: event) {
             return
         }

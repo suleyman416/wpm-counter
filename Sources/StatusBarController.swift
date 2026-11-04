@@ -53,6 +53,15 @@ public final class StatusBarController: NSObject, NSMenuDelegate {
         toggleItem.target = self
         menu.addItem(toggleItem)
 
+        // Quick Typing Bar
+        let typingBarItem = NSMenuItem(
+            title: "Quick Typing Bar (⌥⇧W)",
+            action: #selector(toggleTypingBar),
+            keyEquivalent: ""
+        )
+        typingBarItem.target = self
+        menu.addItem(typingBarItem)
+
         // Test Typing Burst (Preview)
         let demoItem = NSMenuItem(
             title: "Test Typing Burst (Preview)",
@@ -158,6 +167,10 @@ public final class StatusBarController: NSObject, NSMenuDelegate {
             WPMEngine.shared.displayWPM = 0
         }
         updateMenuState()
+    }
+
+    @objc private func toggleTypingBar() {
+        TypingBarWindow.shared.toggle()
     }
 
     @objc private func selectTheme(_ sender: NSMenuItem) {
